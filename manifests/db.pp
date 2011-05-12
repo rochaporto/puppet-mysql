@@ -17,7 +17,7 @@
 #
 # CERN IT/GT/DMS <it-dep-gt-dms@cern.ch>
 #
-define mysql::db($source) {
+define mysql::server::db($source) {
   exec { "mysql_schema_load_$name":
     path    => "/usr/bin:/usr/sbin:/bin",
     command => "mysql -uroot < $source",

@@ -24,7 +24,7 @@
 #
 # CERN IT/GT/DMS <it-dep-gt-dms@cern.ch>
 #
-define mysql::grant($user, $password, $db, $host="localhost") {
+define mysql::server::grant($user, $password, $db, $host="localhost") {
   exec { "mysql_user_grant_$user_$db":
     path    => "/usr/bin:/usr/sbin:/bin",
     command => "mysql -uroot -e \"grant all privileges on $db.* to '$user'@'$host' identified by '$password'\"",
